@@ -1,0 +1,73 @@
+## Hybrid Search with Azure AI: Combining Keyword & Vector Queries
+Artificial intelligence is evolving rapidly, giving us powerful tools that bring human-like understanding to software systems. One of the most exciting advancements in this space is vector search, a form of semantic search. Unlike traditional keyword-based search, which looks for exact word matches, vector search understands the meaning behind a query and returns results that are contextually relevant—even when the wording differs.
+
+In this blog post, we’ll explore how to integrate vector search into your application to make search smarter, more intuitive, and user-friendly.
+
+
+## Traditional Keyword Search :
+In traditional keyword-based search, the system looks for exact keyword matches in the document and ranks results based on how often those keywords appear. The more frequently a keyword shows up, especially in prominent places like titles or headings, the higher the document ranks.
+
+ Example: Searching for Shoes on an E-commerce Site
+
+Imagine you have a set of product descriptions for running shoes and sneakers:
+
+Product Descriptions:
+Top-rated running shoes for marathon training
+
+
+Men’s lightweight running shoes for optimal performance
+
+
+Best sneakers for jogging and daily wear
+
+
+Top-rated sneakers for running
+
+
+With keyword searches:
+
+Search: “sneakers” -> Matches descriptions 3 and 4, because they include the exact word “sneakers”.
+
+Search: “running” -> Matches 1, 2, and 4, as these explicitly mention “running”.
+
+Search: “Best running shoes” → Returns all four, because each document contains “best”, “running”, or “shoes” and will return results accordingly
+
+Search: "sneakars" ->  It will not return anything as the spelling mistake is there. 
+
+## Vector Search / Semantic Search:
+Enhancing search engines to return more relevant results based on the meaning of queries rather than just keyword matching.
+
+Now when we are searching for Best Running Shoes it should have returned products with following order based on semantic meaning of product description: 
+
+#1 – “Top‑rated running shoes for marathon training” – strongest match: “running shoes,” “top-rated” (synonym for “best”).
+
+#2 – “Men’s lightweight running shoes for optimal performance” – very close match (“running shoes,” performance-related).
+
+#4 – “Top‑rated sneakers for running” – matches “top-rated” + “running” even though it says “sneakers.”
+
+#3 – “Best sneakers for jogging and daily wear” – includes “best” and “sneakers” aligned with running/casual wear.
+
+Before diving deeper into the implementation of vector search lets understand few terminologies related to vector search:
+
+## Vectorization/ Vector Embeddings:
+
+Vectorization is simply turning things like words, sentences, pictures, or even whole documents into lists of numbers that computers can work with—so one piece of text becomes something like [0.32, 0.42, …], and another text with a similar meaning ends up with numbers that are close to it. It's like placing ideas on a map: “sneakers” and “shoes” sit near each other because they're alike, while “heels” is farther away. This makes it easy for a computer to group similar items, find synonyms, or rank search results by meaning rather than just exact words.
+There are different models which we can use to do vector embedding for queries and also for storing data in vector format. 
+
+## Text-embedding-ada-002
+
+This is text embedding model provided by Open AI. It is used to transform text into fixed length vectors.It can be used for various applications like Semantic Search, Clustering and Classification or Recommendation system.
+In this blog post we will be using this model to generate vector embeddings.
+
+## Distance and Similarity Matrix:
+
+1. Cosine Similarity: Measures the angle between two vectors, focusing on direction over length. Its great for text comparisons.
+2. Euclidean Distance: The straight-line distance between points. Useful but less effective in high dimensions.
+3. Dot Product: Captures both direction and magnitude. It is commonly used inside models.
+
+## k-NN and ANN
+
+1. k-Nearest Neighbors (k-NN): Finds exact closest vectors by comparing to every point—accurate but slow for large data.
+2. Approximate Nearest Neighbors (ANN): Sacrifices a bit of accuracy for huge speed gains using smart indexing.
+
+Lets see how all of this concepts connects :
