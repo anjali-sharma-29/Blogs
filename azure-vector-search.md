@@ -15,10 +15,10 @@ In traditional keyword-based search, the system looks for exact keyword matches 
 4. Top-rated sneakers for running
 
 ### Query Results
-1. Search: “sneakers” -> Matches descriptions 3 and 4, because they include the exact word “sneakers”.
-2. Search: “running” -> Matches 1, 2, and 4, as these explicitly mention “running”.
-3. Search: “Best running shoes” -> Returns all four, because each document contains “best”, “running”, or “shoes” and will return results accordingly
-4. Search: "sneakars" ->  It will not return anything as the spelling mistake is there. 
+1. Search: `sneakers` -> Matches descriptions 3 and 4, because they include the exact word `sneakers`.
+2. Search: `running` -> Matches 1, 2, and 4, as these explicitly mention `running`.
+3. Search: `Best running shoes` -> Returns all four, because each document contains `best`, `running`, or `shoes` and will return results accordingly
+4. Search: `sneakars` ->  It will not return anything as the spelling mistake is there. 
 
 ## Vector Search / Semantic Search:
 Enhancing search engines to return more relevant results based on the meaning of queries rather than just keyword matching.
@@ -49,13 +49,13 @@ In this blog post we will be using this model to generate vector embeddings.
 
 A distance matrix tells you how different two items are. The smaller the value, the more similar the items. A similarity matrix tells you how similar two items are. The higher the value, the more similar the items.
 
-1. Cosine Similarity: Measures the angle between two vectors, focusing on direction over length. Its great for text comparisons.
-2. Euclidean Distance: The straight-line distance between points. Useful but less effective in high dimensions.
-3. Dot Product: Captures both direction and magnitude. It is commonly used inside models.
+1. *Cosine Similarity*: Measures the angle between two vectors, focusing on direction over length. Its great for text comparisons.
+2. *Euclidean Distance*: The straight-line distance between points. Useful but less effective in high dimensions.
+3. *Dot Product*: Captures both direction and magnitude. It is commonly used inside models.
 
 ## k-NN and ANN
 
-1. k-Nearest Neighbors (k-NN): Finds exact closest vectors by comparing to every point—accurate but slow for large data.
-2. Approximate Nearest Neighbors (ANN): Sacrifices a bit of accuracy for huge speed gains using smart indexing.
+1. *k-Nearest Neighbors (k-NN)*: Finds exact closest vectors by comparing to every point—accurate but slow for large data.
+2. *Approximate Nearest Neighbors (ANN)*: Sacrifices a bit of accuracy for huge speed gains using smart indexing.
 
 Lets see how all of this concepts connects :
