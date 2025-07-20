@@ -1,51 +1,37 @@
 ## Hybrid Search with Azure AI: Combining Keyword & Vector Queries
-Artificial intelligence is evolving rapidly, giving us powerful tools that bring human-like understanding to software systems. One of the most exciting advancements in this space is vector search, a form of semantic search. Unlike traditional keyword-based search, which looks for exact word matches, vector search understands the meaning behind a query and returns results that are contextually relevant—even when the wording differs.
+Artificial intelligence is evolving rapidly, giving us powerful tools that bring human-like understanding to software systems. One of the most exciting advancements in this space is vector search, a form of semantic search. Unlike traditional keyword-based search, which looks for exact word matches, vector search understands the meaning behind a query and returns results that are contextually relevant, even when the wording differs.
 
 In this blog post, we’ll explore how to integrate vector search into your application to make search smarter, more intuitive, and user-friendly.
-
 
 ## Traditional Keyword Search :
 In traditional keyword-based search, the system looks for exact keyword matches in the document and ranks results based on how often those keywords appear. The more frequently a keyword shows up, especially in prominent places like titles or headings, the higher the document ranks.
 
- Example: Searching for Shoes on an E-commerce Site
+## Example: Searching for Shoes on an E-commerce Site
 
-Imagine you have a set of product descriptions for running shoes and sneakers:
+### Product Descriptions:
+1. Top-rated running shoes for marathon training
+2. Men’s lightweight running shoes for optimal performance
+3. Best sneakers for jogging and daily wear
+4. Top-rated sneakers for running
 
-Product Descriptions:
-Top-rated running shoes for marathon training
-
-
-Men’s lightweight running shoes for optimal performance
-
-
-Best sneakers for jogging and daily wear
-
-
-Top-rated sneakers for running
-
-
-With keyword searches:
-
-Search: “sneakers” -> Matches descriptions 3 and 4, because they include the exact word “sneakers”.
-
-Search: “running” -> Matches 1, 2, and 4, as these explicitly mention “running”.
-
-Search: “Best running shoes” → Returns all four, because each document contains “best”, “running”, or “shoes” and will return results accordingly
-
-Search: "sneakars" ->  It will not return anything as the spelling mistake is there. 
+### Query Results
+1. Search: “sneakers” -> Matches descriptions 3 and 4, because they include the exact word “sneakers”.
+2. Search: “running” -> Matches 1, 2, and 4, as these explicitly mention “running”.
+3. Search: “Best running shoes” -> Returns all four, because each document contains “best”, “running”, or “shoes” and will return results accordingly
+4. Search: "sneakars" ->  It will not return anything as the spelling mistake is there. 
 
 ## Vector Search / Semantic Search:
 Enhancing search engines to return more relevant results based on the meaning of queries rather than just keyword matching.
 
 Now when we are searching for Best Running Shoes it should have returned products with following order based on semantic meaning of product description: 
 
-#1 – “Top‑rated running shoes for marathon training” – strongest match: “running shoes,” “top-rated” (synonym for “best”).
+  #1 – `Top‑rated running shoes for marathon training` – strongest match: `running shoes`, `top-rated` (synonym for `best`).
 
-#2 – “Men’s lightweight running shoes for optimal performance” – very close match (“running shoes,” performance-related).
+  #2 – `Men’s lightweight running shoes for optimal performance` – very close match (`running shoes`, performance-related).
 
-#4 – “Top‑rated sneakers for running” – matches “top-rated” + “running” even though it says “sneakers.”
+  #3 – `Top‑rated sneakers for running` – matches `top-rated` + `running` even though it says `sneakers`.
 
-#3 – “Best sneakers for jogging and daily wear” – includes “best” and “sneakers” aligned with running/casual wear.
+  #4 – `Best sneakers for jogging and daily wear` – includes `best` and `sneakers` aligned with running/casual wear.
 
 Before diving deeper into the implementation of vector search lets understand few terminologies related to vector search:
 
