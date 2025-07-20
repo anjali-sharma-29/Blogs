@@ -47,6 +47,8 @@ In this blog post we will be using this model to generate vector embeddings.
 
 ## Distance and Similarity Matrix:
 
+A distance matrix tells you how different two items are. The smaller the value, the more similar the items. A similarity matrix tells you how similar two items are. The higher the value, the more similar the items.
+
 1. Cosine Similarity: Measures the angle between two vectors, focusing on direction over length. Its great for text comparisons.
 2. Euclidean Distance: The straight-line distance between points. Useful but less effective in high dimensions.
 3. Dot Product: Captures both direction and magnitude. It is commonly used inside models.
