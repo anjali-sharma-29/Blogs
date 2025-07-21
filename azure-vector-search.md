@@ -59,3 +59,36 @@ A distance matrix tells you how different two items are. The smaller the value, 
 2. *Approximate Nearest Neighbors (ANN)*: Sacrifices a bit of accuracy for huge speed gains using smart indexing.
 
 Lets see how all of this concepts connects :
+
+## Pre-requisite
+1. You must have azure subscription acess
+2. Your account must be approved for Azure OpenAI
+
+## Create Azure Open AI resource in Azure Portal
+
+1. [Go to azure portal](https://portal.azure.com) and Search for `Azure OpenAI`.
+2. Create a new resource of Azure OpenAI.
+3. Follow the prompt as mentioned in below image and wait till deployment is completed.
+4. Go to the AzureFoundry Azure AI Playground.
+5. Go to Deployment Model and deploy `Text-embedding-ada-002` model by following the prompt as shown below.
+6. Once deployment is completed we can consume the APi to generate the text embeddings using the `api-endpoint` and `api-key`.
+
+## Create Azure Search Index
+
+1. On Azure Portal create the Search Service Resource
+2. Using the API endpoint and key we can create the new indexes in the search service
+
+## Generate the data for Azure Search Index store embedded vectors for the vector fields
+
+## Keyword Based Query
+
+## Vectory Search Query
+
+## Hybrid Query
+
+
+   
+
+    
+
+   
